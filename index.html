@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Activity 1 - Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#careers">Careers</a></li>
+      </ul>
+      <div class="logo">LIAM</div>
+    </div>
+
+    <section class="home" id="home">
+      <h1>The Power of Web Development.</h1>
+      <h2>Building the Future, One Line of Code at a Time.</h2>
+      <a href="#about"><button class="btn">Get Started</button></a>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-image">
+        <img src="What-Is-Web-Design-2.jpg" alt="about-image" />
+      </div>
+      <div class="about-content">
+        <h3>Why Web Development Matters</h3>
+        <p>
+          Web development is the backbone of the modern digital world. It
+          encompasses everything from designing visually appealing websites to
+          creating robust web applications that enhance user experience. Here’s
+          why web development is crucial:
+        </p>
+        <ul>
+          <li>
+            <strong>Enhancing Online Presence:</strong> A well-developed website
+            establishes a strong online presence, making businesses and
+            individuals more accessible to a global audience.
+          </li>
+          <li>
+            <strong>Building User-Friendly Interfaces:</strong> Good web
+            development practices ensure that websites are easy to navigate,
+            visually appealing, and functional, improving the overall user
+            experience.
+          </li>
+          <li>
+            <strong>The Role of Developers in Shaping the Internet:</strong>
+            Developers play a vital role in innovating and evolving the web,
+            contributing to the growth and functionality of the internet.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="careers" class="careers">
+      <div class="container">
+        <h2>Careers</h2>
+        <p>
+          Join our team of passionate web developers and help us shape the
+          future of the internet. Explore our current job openings and find the
+          right fit for you.
+        </p>
+
+        <div class="job-listings">
+          <div class="job-item">
+            <h3>Front-End Developer</h3>
+            <p>
+              We are looking for a skilled Front-End Developer with experience
+              in HTML, CSS, and JavaScript. You will work closely with our
+              design team to create user-friendly web interfaces.
+            </p>
+            <a href="#apply" class="apply-button">Apply Now</a>
+          </div>
+
+          <div class="job-item">
+            <h3>Back-End Developer</h3>
+            <p>
+              Our team is searching for a talented Back-End Developer with
+              expertise in server-side languages like Python, Ruby, or PHP.
+              You'll be responsible for developing and maintaining our web
+              applications.
+            </p>
+            <a href="#apply" class="apply-button">Apply Now</a>
+          </div>
+
+          <div class="job-item">
+            <h3>Full-Stack Developer</h3>
+            <p>
+              We're looking for a Full-Stack Developer who can manage both
+              front-end and back-end development tasks. If you're versatile and
+              have a passion for building comprehensive web solutions, this role
+              is for you.
+            </p>
+            <a href="#apply" class="apply-button">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-column quick-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column social-media">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-column copyright">
+        <p>&copy; <span id="year"></span> Luis Liam. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      let menuicon = document.querySelector("#menu-icon");
+      let navigation = document.querySelector(".nav");
+
+      menuicon.onclick = () => {
+        menuicon.classList.toggle("fa-xmark");
+        navigation.classList.toggle("active");
+      };
+
+      ScrollReveal({
+        distance: "80px",
+        duration: 2000,
+        delay: 200,
+      });
+
+      ScrollReveal().reveal(".home h1, .navbar", {
+        origin: "top",
+      });
+      ScrollReveal().reveal(" .home h2, .home button, footer", {
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".about-image, .contact-info", {
+        origin: "left",
+      });
+      ScrollReveal().reveal(".job-listings, .container, .about-content", {
+        origin: "right",
+      });
+    </script>
+  </body>
+</html>
